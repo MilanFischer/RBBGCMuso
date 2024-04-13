@@ -253,7 +253,7 @@ musoGlue <- function(presCalFile, w, delta = 0.17, settings=setupMuso(), paramet
                             preservedCalib
     })
     optRanges <-t(apply(preservedCalibtop5,2,function(x) quantile(x,c(0.05,0.5,0.95))))  
-    pdf("dotplot.pdf")
+    png("dotplot.png")
     if(lg){
         plot(Reduce(min, -(unfilteredLikelihood), accumulate=TRUE),type="l", ylab="-log(likelihood)",xlab="iterations")
     } else {
